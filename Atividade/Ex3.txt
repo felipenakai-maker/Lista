@@ -1,0 +1,22 @@
+namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> L1 = new List<int> { 5, 2, 8, 1, 9 };
+            List<int> L2 = new List<int> { 4, 7, 3, 6 };
+
+            List<int> L3 = L1;
+            L3.AddRange(L2);
+
+            Console.WriteLine("Lista concatenada (L3): " + string.Join(", ", L3));
+
+            L3.Sort();
+            Console.WriteLine("L3 em ordem crescente: " + string.Join(", ", L3));
+
+            L3.Reverse();
+            Console.WriteLine("L3 em ordem decrescente: " + string.Join(", ", L3));
+        }
+    }
+}
