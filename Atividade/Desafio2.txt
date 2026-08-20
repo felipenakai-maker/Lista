@@ -1,0 +1,43 @@
+namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //info que o usuario vai por
+            List<int> numeros = new List<int>();
+
+            while (true)
+            {
+                Console.Write("Digite um número (0 para encerrar): ");
+                int valor = int.Parse(Console.ReadLine());
+
+                if (valor == 0)
+                    break;
+
+                numeros.Add(valor);
+            }
+
+            if (numeros.Count > 0)
+            {
+                double soma = numeros.Sum();
+
+                double multiplicacao = 1;
+                foreach (double n in numeros)
+                    multiplicacao *= n;
+
+                double maior = numeros.Max();
+                double menor = numeros.Min();
+
+                Console.WriteLine($"\nSoma: {soma}");
+                Console.WriteLine($"Multiplicação: {multiplicacao}");
+                Console.WriteLine($"Maior número: {maior}");
+                Console.WriteLine($"Menor número: {menor}");
+            }
+            else
+            {
+                Console.WriteLine("Nenhum número foi informado.");
+            }
+        }
+    }
+}
