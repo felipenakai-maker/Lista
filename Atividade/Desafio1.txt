@@ -1,0 +1,48 @@
+namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //info que o usuario vai por
+            List<int> numeros = new List<int>();
+
+            while (true)
+            {
+                Console.Write("Digite um número (0 para encerrar): ");
+                int valor = int.Parse(Console.ReadLine());
+
+                if (valor == 0)
+                    break;
+
+                numeros.Add(valor);
+            }
+            //criar e separar as listas dos num
+            List<int> pares = new List<int>();
+            List<int> impares = new List<int>();
+
+            foreach (int n in numeros)
+            {
+                if (n % 2 == 0)
+                    pares.Add(n);
+                else
+                    impares.Add(n);
+            }
+            //botando em ordem as listas
+            numeros.Sort();
+            pares.Sort();
+            impares.Sort();
+
+            Console.WriteLine("\nNúmeros digitados (ordenados): " + string.Join(", ", numeros));
+            Console.WriteLine("Números pares (ordenados): " + string.Join(", ", pares));
+            Console.WriteLine("Números ímpares (ordenados): " + string.Join(", ", impares));
+            //somando os num 
+            int soma = 0;
+            foreach (int n in numeros)
+            {
+                soma += n;
+            }
+            Console.WriteLine($"\nSoma de todos os números: {soma}");
+        }
+    }
+}
