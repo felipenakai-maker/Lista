@@ -1,0 +1,42 @@
+namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numeros = [];
+
+            while (true)
+            {
+                Console.Write("Digite um número (0 para encerrar): ");
+                int valor = int.Parse(Console.ReadLine());
+
+                if (valor == 0)
+                    break;
+
+                numeros.Add(valor);
+
+            }
+
+            List<int> Rep = new List<int>();
+            List<int> NoRep = new List<int>();
+
+            foreach (int i in numeros)
+                {
+                    if (!NoRep.Contains(i) && !Rep.Contains(i))
+                    {
+                        NoRep.Add(i);
+                    }
+                    else if (!Rep.Contains(i))
+                    {
+                        NoRep.Remove(i);
+                        Rep.Add(i);
+                    }
+
+                }
+            Console.WriteLine("A lista de todos os numeros ficou: "  + string.Join(", ", numeros));
+            Console.WriteLine("A lista dos repetidos ficou:" + string.Join(", ", Rep));
+            Console.WriteLine("A lista dos números distintos: " + string.Join(", ", NoRep));
+        }
+    }
+}
