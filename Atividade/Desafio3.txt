@@ -1,0 +1,41 @@
+namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //info que o usuario vai por
+            List<string> Palavras = new List<string>();
+
+            while (true)
+            {
+                Console.Write("Digite uma palavra (0 para encerrar): ");
+                string valor = Console.ReadLine();
+
+                if (valor == "0")
+                    break;
+                if (int.TryParse(valor, out _)) 
+                {
+                    Console.WriteLine("Entrada invalida.");
+                    continue;
+                }
+
+                Palavras.Add(valor);
+            }
+            Console.Write("Digite a palavra que deseja contar: ");
+            string palavra = Console.ReadLine();
+            int contador = 0;
+            foreach (string valor in Palavras)
+            {
+                if(palavra == valor)
+                {
+                    contador++;
+                    
+                }
+            }
+            Console.WriteLine($"A palavra: {palavra}, foi escrita {contador} vezes.");
+
+
+        }
+    }
+}
