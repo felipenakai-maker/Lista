@@ -1,0 +1,43 @@
+namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> Respostas = [];
+            List<string> Perguntas = ["Telefonou para a vítima?", "Esteve no local do crime?", "Mora perto da vítima?", "Devia para a vítima?", "Já trabalhou com a vítima?"];
+            foreach (string pergunta in Perguntas)
+            {
+                Console.WriteLine(pergunta);
+                string Resposta = Console.ReadLine().ToLower();
+                if (Resposta == "sim" || Resposta == "si" || Resposta == "sm" || Resposta == "s")
+                {
+                    Respostas.Add("s");
+                }
+            }
+            int Caso = Respostas.Count;
+            switch (Caso)
+            {
+                case 1:
+                        Console.WriteLine("Suspeita");
+                    break;
+                case 2:
+                        Console.WriteLine("Suspeita");
+                    break;
+                case 3 :
+                        Console.WriteLine("Cumplíce");
+                    break;
+                case 4:
+                        Console.WriteLine("Cumplíce");
+                    break;
+                case 5:
+                        Console.WriteLine("Assasino");
+                    break;
+                    
+                default:
+                        Console.WriteLine("Inocente"); 
+                    break;
+            }
+        }
+    }
+}
